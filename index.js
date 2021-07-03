@@ -7,6 +7,11 @@ inquirer
     .prompt([
         {
             type: 'input',
+            name: 'name',
+            message: 'What is your name?',
+        },
+        {
+            type: 'input',
             name: 'title',
             message: 'What is the title of your application repository?',
         },
@@ -32,14 +37,14 @@ inquirer
         },
         {
             type: 'input',
-            name: 'contributing',
-            message: 'Who contributed to your application?',
+            name: 'test',
+            message: 'What are the test instructions?',
         },
         {
             type: 'list',
             name: 'license',
             message: 'What license is your application covered under?',
-            choices: ['MIT', 'blah', 'blah'],
+            choices: ['MIT', 'GPL', 'BSD'],
         },
         {
             type: 'input',
@@ -55,49 +60,51 @@ inquirer
 
     .then((data) => {
         const readme = `
-        # ${data.title}
-        ![GitHub License](https://img.shields.io/badge/license-${data.license}-blue.svg)
-        
-        ## Description
-        
-        ${data.description}
-        
-        ## Table of Contents
-        
-        *[Installation](#installation)
-        
-        *[Usage](#usage)
-        
-        *[License](#license)
-        
-        *[Contributing](#contributing)
-        
-        *[Tests](#tests)
-        
-        *[Questions](#questions)
-        
-        ## Installation 
-        
-        ${data.installation}
-    
-        ## Usage
-        
-        ${data.usage}
-        
-        ## License 
-        
-        This Project is licensed under the ${data.license} license.
-        
-        ## Contributing
-        
-        ${data.contributing}
-        
-        ## Tests
-        
-        
-        ## Questions
-        
-        If you have any questions about the repo, open an issue or contact me directly at ${data.email}. You can find more more of my work at [name](https://github.com/${data.github}).
+# ${data.title}
+![GitHub License](https://img.shields.io/badge/license-${data.license}-blue.svg)
+
+## Description
+
+${data.description}
+
+## Table of Contents
+
+*[Installation](#installation)
+
+*[Usage](#usage)
+
+*[License](#license)
+
+*[Contributing](#contributing)
+
+*[Tests](#tests)
+
+*[Questions](#questions)
+
+## Installation 
+
+${data.installation}
+
+## Usage
+
+${data.usage}
+
+## License 
+
+This Project is licensed under the ${data.license} license.
+
+## Contributing
+
+${data.contributing}
+
+## Tests
+
+${data.test}
+
+## Questions
+
+If you have any questions about the repo, open an issue or contact me directly at ${data.email}. 
+You can find more more of my work at [name](https://github.com/${data.github}).
       `;
       
         fs.writeFile('README.md', readme, function (err) {
