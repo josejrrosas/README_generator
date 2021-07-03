@@ -22,7 +22,7 @@ inquirer
         },
         {
             type: 'input',
-            name: 'uses',
+            name: 'usage',
             message: 'What uses does your application have?',
         },
         {
@@ -32,7 +32,7 @@ inquirer
         },
         {
             type: 'input',
-            name: 'contributers',
+            name: 'contributing',
             message: 'Who contributed to your application?',
         },
         {
@@ -43,19 +43,61 @@ inquirer
         },
         {
             type: 'input',
-            name: 'github',
+            name: 'email',
             message: 'What is your email',
         },
         {
             type: 'input',
-            name: 'email',
+            name: 'github',
             message: 'What is your github username',
         },
     ])
 
     .then((data) => {
         const readme = `
-         
+        # ${data.title}
+        ![GitHub License](https://img.shields.io/badge/license-${data.license}-blue.svg)
+        
+        ## Description
+        
+        ${data.description}
+        
+        ## Table of Contents
+        
+        *[Installation](#installation)
+        
+        *[Usage](#usage)
+        
+        *[License](#license)
+        
+        *[Contributing](#contributing)
+        
+        *[Tests](#tests)
+        
+        *[Questions](#questions)
+        
+        ## Installation 
+        
+        ${data.installation}
+    
+        ## Usage
+        
+        ${data.usage}
+        
+        ## License 
+        
+        This Project is licensed under the ${data.license} license.
+        
+        ## Contributing
+        
+        ${data.contributing}
+        
+        ## Tests
+        
+        
+        ## Questions
+        
+        If you have any questions about the repo, open an issue or contact me directly at ${data.email}. You can find more more of my work at [name](https://github.com/${data.github}).
       `;
       
         fs.writeFile('README.md', readme, function (err) {
