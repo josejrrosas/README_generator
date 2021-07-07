@@ -32,8 +32,8 @@ inquirer
         },
         {
             type: 'input',
-            name: 'contributers',
-            message: 'Who contributed to your application?',
+            name: 'contributing',
+            message: 'Are contributions welcome?',
         },
         {
             type: 'input',
@@ -104,7 +104,7 @@ ${data.test}
 ## Questions
 
 If you have any questions about the repo, open an issue or contact me directly at ${data.email}. 
-You can find more more of my work at [name](https://github.com/${data.github}).
+You can find more more of my work at [${data.name}](https://github.com/${data.github}).
       `;
       
         fs.writeFile('README.md', readme, function (err) {
