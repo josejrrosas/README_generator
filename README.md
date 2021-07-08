@@ -4,7 +4,7 @@
 
 ## Description
 
-This application will help create a README.md for all your projects!
+This application creates a README.md file for your projects.
 
 ## Table of Contents
 
@@ -22,11 +22,15 @@ This application will help create a README.md for all your projects!
 
 ## Installation 
 
-Use npm i to install all dependencies.
+In the terminal, 
+
+run npm install 
+
+and then run node index.js.
 
 ## Usage
 
-This application will create a README.md according to the information you enter.
+This application can be used to make README.md
 
 ## License 
 
@@ -34,14 +38,14 @@ This Project is licensed under the MIT license.
 
 ## Contributing
 
-undefined
+Anyone can contribute. Feel free to make suggestions.
 
 ## Tests
 
-Use terminal with npm i. Then run node index.js
+No need for test.
 
 ## Questions
 
 If you have any questions about the repo, open an issue or contact me directly at josejrrosas@yahoo.com. 
-You can find more more of my work at [Jose Rosas](https://github.com/josejrrosas).
+You can find more more of [Jose Rosas](https://github.com/josejrrosas) by clicking my name.
       
